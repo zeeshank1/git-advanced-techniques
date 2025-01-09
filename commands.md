@@ -8,3 +8,11 @@ Amend the last commit without changing the message: git commit --amend --no-edit
 Change the commit message of the last commit: git commit --amend -m "New commit message"
 
 Undo the last commit but keep changes: git reset --soft HEAD~1
+
+
+Patch Management
+Create a patch from a commit:
+git format-patch -1 <commit-hash>
+
+Apply a patch:
+git apply <patch-file>
