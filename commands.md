@@ -16,3 +16,15 @@ git format-patch -1 <commit-hash>
 
 Apply a patch:
 git apply <patch-file>
+
+
+Squash all commits into one:
+
+git reset --soft $(git rev-list --max-parents=0 HEAD)
+git commit --amend
+Clean untracked files and directories:
+
+git clean -fd
+List all aliases configured:
+
+git config --get-regexp alias
