@@ -33,3 +33,6 @@ git log --oneline --graph --all --decorate
 
 Create a bare repository:
 git init --bare
+
+View tree structure of a commit:
+git ls-tree -r <commit-hash>
