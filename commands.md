@@ -30,3 +30,6 @@ git config --get-regexp alias
 
 Graphical log with branches and commits:
 git log --oneline --graph --all --decorate
+
+Create a bare repository:
+git init --bare
