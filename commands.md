@@ -97,3 +97,59 @@ git ls-tree -r <commit-hash>
 Interactively squash, edit, or reorder commits.  
 ```bash
 git rebase -i HEAD~<number-of-commits>
+
+
+---
+
+## 11. Show the Author of Each Line in a File  
+Display the author and commit details for each line in a file.  
+```bash
+git blame <file-name>
+```
+
+---
+
+## 12. Rename a Branch  
+Rename the current branch or a specific branch.  
+```bash
+git branch -m <new-branch-name>
+```
+
+---
+
+## 13. Cherry-Pick a Commit  
+Apply changes from a specific commit to your current branch.  
+```bash
+git cherry-pick <commit-hash>
+```
+
+---
+
+## 14. Stash Changes and Apply Them Later  
+Temporarily store changes and reapply them later.  
+```bash
+git stash
+git stash apply
+```
+
+---
+
+## 15. Find a Specific Commit that Introduced a Bug  
+Use binary search to find the commit that introduced an issue.  
+```bash
+git bisect start
+git bisect bad
+git bisect good <commit-hash>
+```
+
+---
+
+## 16. Create a Tag for a Commit  
+Add a tag to a specific commit for easier reference.  
+```bash
+git tag -a <tag-name> -m "Tag message" <commit-hash>
+```
+
+
+```
+
