@@ -97,7 +97,7 @@ git ls-tree -r <commit-hash>
 Interactively squash, edit, or reorder commits.  
 ```bash
 git rebase -i HEAD~<number-of-commits>
-
+```
 
 ---
 
@@ -151,5 +151,5 @@ git tag -a <tag-name> -m "Tag message" <commit-hash>
 ```
 
 
-```
+
 
