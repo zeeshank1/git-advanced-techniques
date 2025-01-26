@@ -150,6 +150,35 @@ Add a tag to a specific commit for easier reference.
 git tag -a <tag-name> -m "Tag message" <commit-hash>
 ```
 
+---
 
+## 17. Push Tags to Remote  
+Share local tags with the remote repository.  
+```bash
+git push origin --tags
+```
+
+---
+
+## 18. Remove a Remote Branch  
+Delete a branch from the remote repository.  
+```bash
+git push origin --delete <branch-name>
+```
+
+---
+
+## 19. Check for Conflicts Before Merging  
+Simulate a merge to check for potential conflicts.  
+```bash
+git merge --no-commit --no-ff <branch-name>
+```
+
+---
+
+## 20. Archive a Repository  
+Create an archive of the repository for distribution.  
+```bash
+git archive --format=tar --output=<file-name>.tar <branch-name>
 
 
