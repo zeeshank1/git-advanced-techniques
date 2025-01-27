@@ -1,7 +1,7 @@
 
 # Git Branch Merge Demo
 
-This repository demonstrates the process of branching and merging in Git. It provides examples and instructions on how to effectively manage branches, resolve conflicts, and merge changes back into the main branch.
+This repository demonstrates the process of branching and merging in Git. It provides examples and instructions on effectively managing branches, resolving conflicts, and merging changes into the main branch.
 
 ## Overview
 
