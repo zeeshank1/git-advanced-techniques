@@ -968,7 +968,288 @@ Remove the last commit, preserving changes in the staging area.
 git reset --soft HEAD~1
 ```
 
+
+
 ---
 
-Edited
+# Advanced Git Commands for Power Users
+
+This document lists advanced Git commands, ordered by usage, categorized for better understanding. Apologies for the earlier formatting errors; this version is now properly structured.
+
+---
+
+## 1. Using Reflog to Recover Lost Commits  
+Reflog records all actions in your Git repository.  
+```bash
+git reflog
+```
+
+---
+
+## 2. Staging and Commit Management  
+
+### a. Amend the Last Commit Without Changing the Message  
+Modify the last commit without altering its message.  
+```bash
+git commit --amend --no-edit
+```
+
+### b. Change the Commit Message of the Last Commit  
+Edit the last commit's message.  
+```bash
+git commit --amend -m "New commit message"
+```
+
+### c. Undo the Last Commit but Keep Changes  
+Remove the last commit, preserving changes in the staging area.  
+```bash
+git reset --soft HEAD~1
+```
+
+---
+
+## 3. Patch Management  
+
+### a. Create a Patch from a Commit  
+Generate a patch file for a specific commit.  
+```bash
+git format-patch -1 <commit-hash>
+```
+
+### b. Apply a Patch  
+Apply changes from a patch file.  
+```bash
+git apply <patch-file>
+```
+
+---
+
+## 4. Squash All Commits into One  
+Combine all commits in the branch into a single commit.  
+```bash
+git reset --soft $(git rev-list --max-parents=0 HEAD)
+git commit --amend
+```
+
+---
+
+## 5. Clean Untracked Files and Directories  
+Remove untracked files and directories from your working directory.  
+```bash
+git clean -fd
+```
+
+---
+
+## 6. List All Configured Aliases  
+See all configured aliases in your Git environment.  
+```bash
+git config --get-regexp alias
+```
+
+---
+
+## 7. Graphical Log with Branches and Commits  
+View a graphical log of your repository.  
+```bash
+git log --oneline --graph --all --decorate
+```
+
+---
+
+## 8. Create a Bare Repository  
+Set up a bare repository for remote sharing or storage.  
+```bash
+git init --bare
+```
+
+---
+
+## 9. View Tree Structure of a Commit  
+Display the file tree structure of a specific commit.  
+```bash
+git ls-tree -r <commit-hash>
+```
+
+---
+
+## 10. Interactive Rebase to Squash or Edit Commits  
+Interactively squash, edit, or reorder commits.  
+```bash
+git rebase -i HEAD~<number-of-commits>
+```
+
+---
+
+## 11. Show the Author of Each Line in a File  
+Display the author and commit details for each line in a file.  
+```bash
+git blame <file-name>
+```
+
+---
+
+## 12. Rename a Branch  
+Rename the current branch or a specific branch.  
+```bash
+git branch -m <new-branch-name>
+```
+
+---
+
+## 13. Cherry-Pick a Commit  
+Apply changes from a specific commit to your current branch.  
+```bash
+git cherry-pick <commit-hash>
+```
+
+---
+
+## 14. Stash Changes and Apply Them Later  
+Temporarily store changes and reapply them later.  
+```bash
+git stash
+git stash apply
+```
+
+---
+
+## 15. Find a Specific Commit that Introduced a Bug  
+Use binary search to find the commit that introduced an issue.  
+```bash
+git bisect start
+git bisect bad
+git bisect good <commit-hash>
+```
+
+---
+
+## 16. Create a Tag for a Commit  
+Add a tag to a specific commit for easier reference.  
+```bash
+git tag -a <tag-name> -m "Tag message" <commit-hash>
+```
+
+---
+
+## 17. Push Tags to Remote  
+Share local tags with the remote repository.  
+```bash
+git push origin --tags
+```
+
+---
+
+## 18. Remove a Remote Branch  
+Delete a branch from the remote repository.  
+```bash
+git push origin --delete <branch-name>
+```
+
+---
+
+## 19. Check for Conflicts Before Merging  
+Simulate a merge to check for potential conflicts.  
+```bash
+git merge --no-commit --no-ff <branch-name>
+```
+
+---
+
+## 20. Archive a Repository  
+Create an archive of the repository for distribution.  
+```bash
+git archive --format=tar --output=<file-name>.tar <branch-name>
+```
+
+---
+
+## 21. Replace Local Branch with Remote Branch  
+Forcefully replace the local branch with the remote branch.
+```bash
+git fetch origin
+# Replace local changes with the remote branch
+git reset --hard origin/<branch-name>
+```
+
+---
+
+## 22. Show Only the Names of Changed Files Between Commits  
+List the names of files that have been changed between two commits.
+```bash
+git diff --name-only <commit1> <commit2>
+```
+
+---
+
+## 23. Find Commits that Changed a Specific Line in a File  
+Identify commits that modified a particular line in a file.
+```bash
+git log -L <start-line>,<end-line>:<file-path>
+```
+
+---
+
+## 24. Remove a File from the Repository but Keep It Locally  
+Delete a file from Git's version control without deleting the file locally.
+```bash
+git rm --cached <file-path>
+```
+
+---
+
+## 25. Track Only a Specific Directory in a Large Repository  
+Limit tracking to a single directory when cloning.
+```bash
+git clone --filter=blob:none --sparse <repo-url>
+cd <repo-folder>
+git sparse-checkout set <directory-path>
+```
+
+---
+
+## 26. Show Git Configuration for a Specific Scope  
+View Git configuration details for system, global, or local scope.
+```bash
+git config --list --system
+```
+```bash
+git config --list --global
+```
+```bash
+git config --list --local
+```
+
+---
+
+## 27. Force Delete a Local Branch  
+Remove a branch locally even if it hasn't been merged.
+```bash
+git branch -D <branch-name>
+```
+
+---
+
+## 28. Generate Statistics of a Repository  
+Create detailed statistics of commits, files, and changes.
+```bash
+git log --stat
+```
+
+---
+
+## 29. List Contributors in a Repository  
+Display contributors along with the number of changes they've made.
+```bash
+git shortlog -sn
+```
+
+---
+
+## 30. Export Repository Without `.git` Directory  
+Export the working directory while excluding the `.git` folder.
+```bash
+git archive --format=tar --output=<file-name>.tar HEAD | tar -x -C <destination-folder>
+```
+
 
