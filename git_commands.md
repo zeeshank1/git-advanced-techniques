@@ -272,3 +272,71 @@ git stash show -p <stash@{n}>
 - Use these commands cautiously, especially `git clean`, `git reset`, or `git push -f`, as they may cause irreversible changes.
 
 This guide helps advanced users navigate Git's powerful commands efficiently.
+
+
+# Advanced Git Commands for Power Users  
+
+This document lists advanced Git commands, ordered by usage, categorized for better understanding.  
+Apologies for the earlier formatting errors; this version is now properly structured.  
+
+---
+
+## 📋 Copy All Commands  
+
+Click the button below to copy all Git commands at once.  
+
+```bash
+# 1. Using Reflog to Recover Lost Commits
+git reflog
+
+# 2. Staging and Commit Management
+## a. Amend the Last Commit Without Changing the Message
+git commit --amend --no-edit
+
+## b. Change the Commit Message of the Last Commit
+git commit --amend -m "New commit message"
+
+## c. Undo the Last Commit but Keep Changes
+git reset --soft HEAD~1
+
+# 3. Patch Management
+## a. Create a Patch from a Commit
+git format-patch -1 <commit-hash>
+
+## b. Apply a Patch
+git apply <patch-file>
+
+# 4. Squash All Commits into One
+git reset --soft $(git rev-list --max-parents=0 HEAD)
+git commit --amend
+
+# 5. Clean Untracked Files and Directories
+git clean -fd
+
+# 6. List All Configured Aliases
+git config --get-regexp alias
+
+# 7. Graphical Log with Branches and Commits
+git log --oneline --graph --all --decorate
+
+# 8. Create a Bare Repository
+git init --bare
+
+# 9. View Tree Structure of a Commit
+git ls-tree -r <commit-hash>
+
+# 10. Interactive Rebase to Squash or Edit Commits
+git rebase -i HEAD~<number-of-commits>
+
+# 11. Show the Author of Each Line in a File
+git blame <file-name>
+
+# 12. Rename a Branch
+git branch -m <new-branch-name>
+
+# 13. Cherry-Pick a Commit
+git cherry-pick <commit-hash>
+
+# 14. Stash Changes and Apply Them Later
+git stash
+git stash
