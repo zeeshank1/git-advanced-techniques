@@ -340,3 +340,223 @@ git cherry-pick <commit-hash>
 # 14. Stash Changes and Apply Them Later
 git stash
 git stash
+
+
+Here are additional advanced and complex Git commands and scenarios to enhance your Git mastery:
+
+---
+
+### **Advanced Logging**
+31. **Graphical log with branches and commits:**
+    ```bash
+    git log --oneline --graph --all --decorate
+    ```
+32. **Log of a specific file:**
+    ```bash
+    git log -- <file>
+    ```
+33. **Find commits by author:**
+    ```bash
+    git log --author="Author Name"
+    ```
+34. **Find commits by a keyword in the message:**
+    ```bash
+    git log --grep="<keyword>"
+    ```
+35. **Show only merge commits:**
+    ```bash
+    git log --merges
+    ```
+
+---
+
+### **Advanced Diffing**
+36. **Diff between two commits:**
+    ```bash
+    git diff <commit1> <commit2>
+    ```
+37. **Diff with ignored whitespace changes:**
+    ```bash
+    git diff -w
+    ```
+38. **Diff for a specific file between branches:**
+    ```bash
+    git diff <branch1>..<branch2> -- <file>
+    ```
+
+---
+
+### **Git Configuration**
+39. **Set a global ignore file:**
+    ```bash
+    git config --global core.excludesfile ~/.gitignore_global
+    ```
+40. **Show current configuration:**
+    ```bash
+    git config --list
+    ```
+41. **Change the default text editor for Git:**
+    ```bash
+    git config --global core.editor "vim"
+    ```
+
+---
+
+### **Advanced Tagging**
+42. **Create a lightweight tag:**
+    ```bash
+    git tag <tag-name>
+    ```
+43. **Create an annotated tag:**
+    ```bash
+    git tag -a <tag-name> -m "Message"
+    ```
+44. **Push tags to the remote:**
+    ```bash
+    git push origin --tags
+    ```
+45. **Delete a tag locally and remotely:**
+    ```bash
+    git tag -d <tag-name>
+    git push origin :refs/tags/<tag-name>
+    ```
+
+---
+
+### **Collaboration and Remote Management**
+46. **Prune stale branches from remotes:**
+    ```bash
+    git fetch --prune
+    ```
+47. **Fetch and rebase automatically:**
+    ```bash
+    git pull --rebase
+    ```
+48. **Show URLs of remote repositories:**
+    ```bash
+    git remote -v
+    ```
+49. **Set a new remote URL:**
+    ```bash
+    git remote set-url origin <new-url>
+    ```
+50. **Clone only the latest commit:**
+    ```bash
+    git clone --depth 1 <repository-url>
+    ```
+
+---
+
+### **Bisect and Debugging**
+51. **Start bisect with a specific range:**
+    ```bash
+    git bisect start <bad-commit> <good-commit>
+    ```
+52. **Skip a commit during bisect:**
+    ```bash
+    git bisect skip
+    ```
+
+---
+
+### **History Rewriting and Cleanup**
+53. **Remove all local branches except main/master:**
+    ```bash
+    git branch | grep -v "main" | xargs git branch -d
+    ```
+54. **Prune unreachable commits (garbage collection):**
+    ```bash
+    git gc --prune=now --aggressive
+    ```
+55. **Revert multiple commits interactively:**
+    ```bash
+    git rebase -i <base-commit>
+    ```
+
+---
+
+### **Powerful Aliases**
+56. **Alias for a one-line log graph:**
+    ```bash
+    git config --global alias.graph "log --oneline --graph --all --decorate"
+    ```
+57. **Alias for checking modified files:**
+    ```bash
+    git config --global alias.changed "diff --name-only"
+    ```
+
+---
+
+### **Advanced Stash**
+58. **Stash only specific files:**
+    ```bash
+    git stash push <file1> <file2>
+    ```
+59. **Create a branch from a stash:**
+    ```bash
+    git stash branch <branch-name> stash@{<index>}
+    ```
+
+---
+
+### **Advanced Submodules**
+60. **Clone a repository with submodules:**
+    ```bash
+    git clone --recurse-submodules <repository-url>
+    ```
+61. **Deinitialize a submodule:**
+    ```bash
+    git submodule deinit -f <submodule-path>
+    ```
+62. **Update submodules to their latest commit:**
+    ```bash
+    git submodule update --remote
+    ```
+
+---
+
+### **Temporary Work with Detached HEAD**
+63. **Checkout a specific commit temporarily:**
+    ```bash
+    git checkout <commit-hash>
+    ```
+64. **Create a branch from a detached HEAD:**
+    ```bash
+    git checkout -b <new-branch-name>
+    ```
+
+---
+
+### **Advanced Fetching**
+65. **Fetch a specific branch only:**
+    ```bash
+    git fetch origin <branch-name>
+    ```
+66. **Fetch and checkout a remote branch:**
+    ```bash
+    git fetch origin <branch-name> && git checkout <branch-name>
+    ```
+
+---
+
+### **Miscellaneous Advanced Commands**
+67. **Show files ignored by `.gitignore`:**
+    ```bash
+    git status --ignored
+    ```
+68. **Find the root directory of the repository:**
+    ```bash
+    git rev-parse --show-toplevel
+    ```
+69. **Create a bare repository:**
+    ```bash
+    git init --bare
+    ```
+70. **View tree structure of a commit:**
+    ```bash
+    git ls-tree -r <commit-hash>
+    ```
+
+---
+
+These commands cover a variety of advanced Git scenarios. Let me know if you need details or specific use cases for any of them!
