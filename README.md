@@ -3,7 +3,7 @@
 
 This repository demonstrates the process of branching and merging in Git. It provides examples and instructions on effectively managing branches, resolving conflicts, and merging changes into the main branch.
 
-## Overview
+## Overview for us
 
 Understanding how to work with branches is essential for collaborative development. This repository covers:
 
