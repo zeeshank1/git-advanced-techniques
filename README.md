@@ -7,7 +7,7 @@ This repository demonstrates the process of branching and merging in Git. It pro
 
 Understanding how to work with branches is essential for collaborative development. This repository covers:
 
-- Creating and managing branches
+- Creating and managing, merging and performing branch operations.
 - Merging branches back into the main branch
 - Handling merge conflicts
 - Best practices for branch management
