@@ -1,6 +1,3 @@
-
-
-
 # git-arena
 A comprehensive repository for practicing Git commands, mastering version control concepts, and storing essential Git tips and techniques.
 
@@ -24,7 +21,7 @@ Git-Arena/ │ <br>
 ## Getting Started
 
 me/Git-Arena.git
-   ```
+   
 **Explore the Sections**:
    Navigate through the Basics, Advanced, and Tips directories to learn and practice Git commands.
 
